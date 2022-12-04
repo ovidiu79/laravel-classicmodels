@@ -27,3 +27,13 @@ Route::get('customers', [CustomerController::class, 'index'])->name('customers')
 Route::get('employees', [EmployeesController::class, 'index'])->name('employees');
 
 Route::get('orders', [OrdersController::class, 'index'])->name('orders');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
