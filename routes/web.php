@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\EmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 Route::get('products', [ProductsController::class, 'index'])->name('products');
 
 Route::get('customers', [CustomerController::class, 'index'])->name('customers');
+
+Route::get('employees', [EmployeesController::class, 'index'])->name('employees');

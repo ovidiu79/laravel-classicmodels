@@ -1,71 +1,51 @@
 <div class="overflow-x-auto relative mt-10 mx-5">
-    <h3>Products</h3>
+    <h3>Employees</h3>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    Code
+                    Number
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Name
+                    Last Name
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Product Line
+                    First Name
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Product Scale
+                    Extension
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Vendor
+                    Email
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Description
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Stock
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    Price
-                </th>
-                <th scope="col" class="py-3 px-6">
-                    MSRP
+                    Office
                 </th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($products as $product)
+            @foreach ($employees as $employee)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td>
-                        {{ $product->productCode }}
+                        {{ $employee->employeeNumber }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $product->productName }}
+                        {{ $employee->lastName }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $product->productLine }}
+                        {{ $employee->firstName }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $product->productScale }}
+                        {{ $employee->extension }}
                     </td>
                     <td>
-                        {{ $product->productVendor }}
+                        {{ $employee->email }}
                     </td>
                     <td class="py-4 px-6">
-                        {{ $product->productDescription }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ $product->quantityInStock }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ $product->buyPrice }}
-                    </td>
-                    <td class="py-4 px-6">
-                        {{ $product->MSRP }}
+                        {{ $employee->office->city }}
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-    {{ $products->links() }}
 </div>
